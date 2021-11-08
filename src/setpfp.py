@@ -19,7 +19,8 @@ def setpfp(filepath: str):
 
     picture = open(filepath, "rb")
 
-    # https://stackoverflow.com/questions/60287922/how-to-upload-photos-pictures-to-zoom-api-using-python-multipart-form-data-wit
+    # * https://stackoverflow.com/questions/60287922/how-to-upload-photos-pictures-to-zoom-api-using-python-multipart-form-data-wit
+    # * It works in Python but not in nodejs, So I need to use Python
     headers = {
         "Authorization": "Bearer {}".format(JWT_TOKEN),
         "Accept": "application/json",

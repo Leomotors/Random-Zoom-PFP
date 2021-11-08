@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 from file_loader import listImages
 import os
 from random import choice
+import time
 
 # * Load Environment Variable
 load_dotenv()
@@ -13,8 +14,17 @@ IMAGE_DIR = os.getenv("IMAGE_DIR")
 if IMAGE_DIR is None:
     raise Exception("IMAGE_DIR is not set")
 
-imageLists = listImages(IMAGE_DIR)
+current_image = None
 
-setpfp(IMAGE_DIR + "/" + choice(imageLists))
+while True:
+    imageLists = listImages(IMAGE_DIR)
+    selectedImage = choice(imageLists)
 
-print("Image has been set!")
+    if current_image == selectedImage:
+        continue
+
+    current_image = selectedImage
+
+    setpfp(IMAGE_DIR + "/" + choice(imageLists))
+    print(f"Image has been set: {current_image}")
+    time.sleep(600)
