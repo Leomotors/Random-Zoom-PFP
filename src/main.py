@@ -27,4 +27,4 @@ while True:
 
     setpfp(IMAGE_DIR + "/" + choice(imageLists))
     print(f"Image has been set: {current_image}")
-    time.sleep(600)
+    time.sleep(300)

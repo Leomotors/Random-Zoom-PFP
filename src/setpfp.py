@@ -14,15 +14,15 @@ def setpfp(filepath: str):
 
     url = f"https://api.zoom.us/v2/users/{USER_ID}/picture"
 
-    if os.path.getsize(filepath) > 2048000:
+    if os.path.getsize(filepath) >= 2048000:
         raise Exception("Illegal File Size")
 
     picture = open(filepath, "rb")
 
     # * https://stackoverflow.com/questions/60287922/how-to-upload-photos-pictures-to-zoom-api-using-python-multipart-form-data-wit
-    # * It works in Python but not in nodejs, So I need to use Python
+    # * It works in Python but dont know why not in nodejs, So I'll stick with Python
     headers = {
-        "Authorization": "Bearer {}".format(JWT_TOKEN),
+        "Authorization": f"Bearer {JWT_TOKEN}",
         "Accept": "application/json",
     }
     files = {
