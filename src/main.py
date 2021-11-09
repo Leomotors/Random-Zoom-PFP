@@ -4,6 +4,7 @@ from file_loader import listImages
 import os
 from random import choice
 import time
+from timelog import getTime
 
 # * Load Environment Variable
 load_dotenv()
@@ -26,5 +27,5 @@ while True:
     current_image = selectedImage
 
     setpfp(IMAGE_DIR + "/" + selectedImage)
-    print(f"Image has been set: {selectedImage}")
+    print(f"[{getTime()}] Image has been set: {selectedImage}")
     time.sleep(300)
