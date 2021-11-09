@@ -19,11 +19,12 @@ current_image = None
 
 while True:
     imageLists = listImages(IMAGE_DIR)
+    print(f"Successfully listed {len(imageLists)} images")
+
     selectedImage = choice(imageLists)
 
     if current_image == selectedImage:
         continue
-
     current_image = selectedImage
 
     setpfp(IMAGE_DIR + "/" + selectedImage)
