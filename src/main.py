@@ -25,6 +25,6 @@ while True:
 
     current_image = selectedImage
 
-    setpfp(IMAGE_DIR + "/" + choice(imageLists))
-    print(f"Image has been set: {current_image}")
+    setpfp(IMAGE_DIR + "/" + selectedImage)
+    print(f"Image has been set: {selectedImage}")
     time.sleep(300)

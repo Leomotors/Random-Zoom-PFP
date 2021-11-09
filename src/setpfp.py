@@ -30,7 +30,7 @@ def setpfp(filepath: str):
     }
 
     response = requests.post(url, files=files, headers=headers)
-    print(response.json())
 
     if response.status_code != 201:
+        print(response.json())
         raise Exception(f"Status Code is {response.status_code}")
